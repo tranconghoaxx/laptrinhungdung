@@ -1,0 +1,20 @@
+namespace docghifile
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //thực hiện chức năng lưu file
+            string filename = "f:\\doc.txt";
+            //file đọc
+            FileStream fs = new FileStream(filename, FileMode.Open);
+            //đọc file
+            StreamReader reader = new StreamReader(fs);
+            using (reader)
+            {
+                Console.WriteLine(reader.ReadToEnd());
+            }
+            Console.ReadLine();
+        }
+    }
+}
