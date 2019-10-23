@@ -1,0 +1,41 @@
+  class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.OutputEncoding = Encoding.Unicode;
+            // Phần 1 Ghi tập tin với  WriteAllLines và WriteAllText
+
+            //b1 tạo chuỗi đường dẫn
+            string filelPath = @"f:\line.txt";
+            string filesPath = @"f:\string.txt";
+
+            // b2 ghi tap tin
+            string[] lines = new string[2];
+            lines[0] = "write lines data to file witn c#";
+            lines[1] = "conghoa";
+
+            //ghi vào tập tin sử dùng WriteAllLines
+            File.AppendAllLines(filelPath, lines);
+
+            //ghi sử dụng WriteAllText
+            string a = "WriteAllText data into string txt";
+            File.WriteAllText(filesPath, a);
+         
+
+            //Phần 2 đọc tập tin với ReadAllLines va ReadAllText
+
+            // ReadAllLines
+            string[] li = File.ReadAllLines(filelPath);
+            foreach(string item in li)
+            {
+                Console.WriteLine("{0}", item);
+            }
+       
+
+            //ReadAllText
+            Console.WriteLine("day la ReadAllText\n");
+            File.ReadAllText(filesPath);
+
+            Console.ReadLine();
+        }
+    }
